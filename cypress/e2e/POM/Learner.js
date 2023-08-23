@@ -16,7 +16,7 @@ class Learner {
       ClickonCreate(){
         const button= cy.get('.cursor-pointer > .mr-1', {timeout:3000})
         button.click()
-        cy.wait(2000)
+        cy.wait(1000)
         }
 
   
@@ -50,14 +50,14 @@ class Learner {
 }
 
 Dropdown(){
-  const dropdown=cy.get('.p-dropdown-label', {timeout:2000})
-  dropdown.click()
-  return this
+  const button=cy.get('.p-dropdown-trigger', {timeout:2000}).click()
+  const button2= cy.get('[ng-reflect-label="1-5"] > .p-ripple').click()
 }
 
 Calender(){
-  const button= cy.get(':nth-child(1) > .block', {timeout:3000})
-  button.click()
+  const Cal1= cy.get('#date > .form-control', {timeout:2000}).click()
+  const Cal2= cy.get(':nth-child(1) > :nth-child(3) > .p-ripple').click()
+
   }
 
 Password(value){
@@ -73,6 +73,13 @@ ConfirmPassword(value){
   field.type(value)
   return this
 } 
+
+Submit(){
+  const button= cy.get('.btn-create-acc', {timeout:3000})
+  button.click()
+  cy.wait(1000)
+  cy.get('#toast-container > .ng-trigger').should('have.text', ' Learner Account Created Successfully ')
+  }
 
   
   }
