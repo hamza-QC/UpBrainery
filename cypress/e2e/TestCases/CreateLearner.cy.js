@@ -1,7 +1,7 @@
 import Learner from '../POM/Learner';
 
-describe('Register', () => {
-    it('Registering a User', () => {
+describe('Create a Learner', () => {
+    it('Create a Learner', () => {
         const obj = new Learner()
 
         let url = Cypress.config().baseUrl; 
