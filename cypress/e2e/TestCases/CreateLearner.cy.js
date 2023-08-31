@@ -15,6 +15,7 @@ describe('Create a Learner', () => {
         let pass = Cypress.config().password;
   
         cy.login(user, pass)
+        cy.wait(2000)
 
         obj.ClickonUsers()
         obj.ClickonLearner()

@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
-
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 module.exports = defineConfig({
+  
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
         reportFilename: "UpBrainary",
@@ -20,7 +21,11 @@ module.exports = defineConfig({
      ] ,
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
+    allureWriter(on, config);
+    return config;
       // implement node event listeners here
     },
   },
+  video: false,
+  screenshotOnRunFailure: false
 });
