@@ -15,7 +15,7 @@ jobs:
         uses: cypress-io/github-action@v4 # use the explicit version number
         with:
           command: npm test run
-           - name: Uploading artifact
+      - name: Uploading artifact
         uses: actions/upload-artifact@v2
         if: always()
         with:
