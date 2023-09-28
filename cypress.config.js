@@ -26,6 +26,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
-  video: false,
+ // video: false,
   screenshotOnRunFailure: false
 });
